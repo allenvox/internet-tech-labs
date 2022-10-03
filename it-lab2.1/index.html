@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+
+<head>
+    <title>Лабораторная 2.1</title>
+    <script>
+        var a = 1;
+        function swap() {
+            if (a > 0) {
+                temp = document.img1.src;
+                document.img1.src = document.img2.src;
+                document.img2.src = temp;
+            }
+        }
+        function deny() {
+            a *= -1;
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin: 10%;
+        }
+    </style>
+</head>
+
+<body bgcolor="white" text="black" link="blue" alink="red" vlink="green">
+    <form align="center"><input value="Запрет" type="button" onclick="deny()"></form>
+    <img name="img1" src="freddy.png" width="500px">
+    <img name="img2" src="foxie.png" width="500px">
+    <form align="center"><input value="Обмен" type="button" onclick="swap()"></form>
+</body>
+
+</html>
