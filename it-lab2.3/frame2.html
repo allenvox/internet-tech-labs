@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+
+<head>
+    <script>
+        function calculateArea() {
+            a = document.getElementById("side").value;
+            if(a >= 0) {
+                var space = a * a;
+                document.getElementById("space").value = space;
+            } else {
+                document.getElementById("space").value = "Неправильный ввод";
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin-top: 5%;
+            margin-bottom: 10%;
+            margin-left: 10%;
+            margin-right: 20%;
+        }
+    </style>
+</head>
+
+<body bgcolor="lightblue" text="black" link="blue" alink="red" vlink="green">
+    <h2>Вычисление площади</h2>
+    <p name="header">Перейдите на поле 'Сторона'</p>
+    <p>Сторона: </p>
+    <form>
+        <input id="side" type="textbox" onmouseover='calculateArea()'>
+    </form>
+    <p>Площадь: </p>
+    <form>
+        <input id="space" type="textbox">
+    </form>
+</body>
+
+</html>

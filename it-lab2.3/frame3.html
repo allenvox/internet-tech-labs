@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+
+<head>
+    <script>
+        function calculateArea() {
+            a = document.getElementById("side").value;
+            if(a >= 0) {
+                var space = a * a;
+                document.getElementById("space").value = space;
+                document.getElementById("space").style.backgroundColor = 'yellow';
+                document.getElementById("side").style.backgroundColor = 'yellow';
+            } else {
+                document.getElementById("space").value = "Неправильный ввод";
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin-top: 5%;
+            margin-bottom: 10%;
+            margin-left: 10%;
+            margin-right: 20%;
+        }
+
+        #side {
+            background-color: #ffffff;
+        }
+        #space {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body bgcolor="pink" text="black" link="blue" alink="red" vlink="green">
+    <h2>Вычисление площади</h2>
+    <p name="header">Уйдите с поля 'Сторона'</p>
+    <p>Сторона: </p>
+    <form>
+        <input id="side" type="text" onmouseout='calculateArea()'>
+    </form>
+    <p>Площадь: </p>
+    <form>
+        <input id="space" type="text">
+    </form>
+</body>
+
+</html>
