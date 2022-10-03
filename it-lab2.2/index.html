@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        i = 2;
+        var idtimer = null;
+        delay = 600;
+        function animation() {
+            if (i == 13) {
+                i = 1;
+            }
+            url = "s" + i.toString() + ".gif";
+            document.img1.src = url;
+            if (idtimer) {
+                clearTimeout(idtimer);
+                idtimer = null;
+            }
+            idtimer = setTimeout('animation()', delay);
+            i++;
+        }
+
+        function startAnimation() {
+            if (idtimer) {
+                clearTimeout(idtimer);
+                idtimer = null;
+            }
+            idtimer = setTimeout('animation()', delay);
+            document.getElementById('stop').style.visibility = 'visible';
+            document.getElementById('fast').style.visibility = 'visible';
+            document.getElementById('slow').style.visibility = 'visible';
+        }
+
+        function stopAnimation() {
+            clearTimeout(idtimer);
+            document.getElementById('stop').style.visibility = 'hidden';
+            document.getElementById('fast').style.visibility = 'hidden';
+            document.getElementById('slow').style.visibility = 'hidden';
+        }
+
+        function addspeed() {
+            delay -= 100;
+            if (idtimer) {
+                clearTimeout(idtimer);
+                idtimer = null;
+            }
+            idtimer = setTimeout('animation()', delay);
+        }
+
+        function subspeed() {
+            delay += 100;
+            if (idtimer) {
+                clearTimeout(idtimer);
+                idtimer = null;
+            }
+            idtimer = setTimeout('animation()', delay);
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin: 20%;
+        }
+
+        #stop {
+            visibility: hidden;
+        }
+
+        #fast {
+            visibility: hidden;
+        }
+
+        #slow {
+            visibility: hidden;
+        }
+    </style>
+    <title>Лабораторная 2.2</title>
+</head>
+
+<body>
+    <img name="img1" src="s1.gif">
+    <form>
+        <button type="button" onclick="startAnimation();">Старт</button>
+        <button id="stop" type="button" onclick="stopAnimation();">Стоп</button>
+        <button id="fast" type="button" onclick="addspeed();">Быстрее</button>
+        <button id="slow" type="button" onclick="subspeed();">Медленнее</button>
+    </form>
+</body>
+
+</html>
