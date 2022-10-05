@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+
+<head>
+    <title>Лабораторная 2.4</title>
+    <style type="text/css">
+        body {
+            margin: 10%;
+        }
+
+        td,
+        tr,
+        img {
+            padding: 0px;
+            margin: 0px;
+            border: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+    </style>
+</head>
+
+<body bgcolor="#FFFFFF">
+    <table cellspacing="0" cellpadding="0" align="center">
+        <tr onclick='switchTime()'>
+            <td><img name="dg1"></td>
+            <td><img name="dg2"></td>
+            <td><img src="dgc.gif"></td>
+            <td><img name="dg3"></td>
+            <td><img name="dg4"></td>
+            <td><img src="dgc.gif"></td>
+            <td><img name="dg5"></td>
+            <td><img name="dg6"></td>
+            <td><img name="dgm"></td>
+            <td>&nbsp;</td>
+            <td><img name="dt1"></td>
+            <td><img name="dt2"></td>
+            <td><img src="dgp.gif"></td>
+            <td><img name="dt3"></td>
+            <td><img name="dt4"></td>
+            <td><img src="dgp.gif"></td>
+            <td><img name="dt5"></td>
+            <td><img name="dt6"></td>
+            <td><img name="dt7"></td>
+            <td><img name="dt8"></td>
+        </tr>
+    </table>
+    <script>
+        mode = -1;
+        function clockTick() {
+            var now = new Date();
+            var day = now.getDate();
+            var month = now.getMonth();
+            var year = now.getFullYear();
+            var sec = now.getSeconds();
+            var minute = now.getMinutes();
+            hour = now.getHours();
+            hour = (hour == 0) ? 12 : hour;
+            if (mode > 0) {
+                document.dgm.src = "dgam.gif";
+                if (hour > 12) {
+                    hour -= 12;
+                    document.dgm.src = "dgpm.gif";
+                }
+            } else {
+                document.dgm.src = "";
+            }
+            if (hour < 10) {
+                hour = "0" + hour;
+            }
+            if (minute < 10) {
+                minute = "0" + minute;
+            }
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+            if (day < 10) {
+                day = "0" + day;
+            }
+            if (month < 10) {
+                month = "0" + month;
+            }
+            now = null;
+            day += "";
+            month++;
+            month += "";
+            year += "";
+            minute += "";
+            hour += "";
+            sec += "";
+            setImg(hour.charAt(0), dg1);
+            setImg(hour.charAt(1), dg2);
+            setImg(minute.charAt(0), dg3);
+            setImg(minute.charAt(1), dg4);
+            setImg(sec.charAt(0), dg5);
+            setImg(sec.charAt(1), dg6);
+            setImg(day.charAt(0), dt1);
+            setImg(day.charAt(1), dt2);
+            setImg(month.charAt(0), dt3);
+            setImg(month.charAt(1), dt4);
+            setImg(year.charAt(0), dt5);
+            setImg(year.charAt(1), dt6);
+            setImg(year.charAt(2), dt7);
+            setImg(year.charAt(3), dt8);
+            setTimeout('clockTick()', 1000);
+        }
+        function setImg(num, doc) {
+            if (num == "0") { doc.src = "dg0.gif" }
+            if (num == "1") { doc.src = "dg1.gif" }
+            if (num == "2") { doc.src = "dg2.gif" }
+            if (num == "3") { doc.src = "dg3.gif" }
+            if (num == "4") { doc.src = "dg4.gif" }
+            if (num == "5") { doc.src = "dg5.gif" }
+            if (num == "6") { doc.src = "dg6.gif" }
+            if (num == "7") { doc.src = "dg7.gif" }
+            if (num == "8") { doc.src = "dg8.gif" }
+            if (num == "9") { doc.src = "dg9.gif" }
+        }
+        function switchTime() {
+            mode *= -1;
+        }
+        clockTick();
+    </script>
+</body>
+
+</html>
