@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+
+<head>
+    <title>Лабораторная 3.1</title>
+    <script>
+        var timer;
+        var bool = 1;
+        function changeBool() {
+            bool *= -1;
+        }
+        function timeHide(i) {
+            timer = setTimeout("hideMenu(" + i.toString() + ")", 500);
+        }
+        function showMenu(i) {
+            if (i == 3 && bool < 0) { } else {
+                clearTimeout(timer);
+                document.getElementById("submenus" + i.toString()).style.visibility = "visible";
+            }
+        }
+        function hideMenu(i) {
+            document.getElementById("submenus" + i.toString()).style.visibility = "hidden";
+        }
+        function setRed(i) {
+            document.getElementById("menu" + i.toString()).style.color = "red";
+        }
+        function setBlack(i) {
+            document.getElementById("menu" + i.toString()).style.color = "black";
+        }
+        function setSubRed(i) {
+            document.getElementById("submenu" + i.toString()).style.color = "red";
+        }
+        function setSubBlack(i) {
+            document.getElementById("submenu" + i.toString()).style.color = "black";
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin-top: -0.1em;
+            margin-left: -0.1em;
+        }
+
+        .menu {
+            max-width: 40%;
+            padding-top: 5pt;
+            padding-left: 5pt;
+            padding-right: 5pt;
+            background-color: lightgreen;
+        }
+
+        .menu a {
+            font-size: larger;
+            font-weight: bold;
+            margin-right: 10%;
+        }
+
+        #submenus1 {
+            visibility: hidden;
+            margin-top: -0.8em;
+            border: 2px solid black;
+            font-size: large;
+            max-width: 60pt;
+            padding: 3pt;
+            background-color: lightblue;
+            margin-left: 0.2em;
+        }
+
+        #submenus2 {
+            visibility: hidden;
+            margin-top: -5.1em;
+            border: 2px solid black;
+            font-size: large;
+            max-width: 60pt;
+            padding: 3pt;
+            background-color: lightblue;
+            margin-left: 6.7em;
+        }
+
+        #submenus3 {
+            visibility: hidden;
+            margin-top: -5.07em;
+            border: 2px solid black;
+            font-size: large;
+            max-width: 60pt;
+            padding: 3pt;
+            background-color: lightblue;
+            margin-left: 13.3em;
+        }
+    </style>
+</head>
+
+<body bgcolor="white" text="black" link="blue" alink="red" vlink="purple">
+    <div class="menu">
+        <form>
+            <a id="menu1" onmouseover='showMenu(1);setRed(1)' onmouseout='setBlack(1)'>Menu1</a>
+            <a id="menu2" onmouseover='showMenu(2);setRed(2)' onmouseout='setBlack(2)'>Menu2</a>
+            <a id="menu3" onmouseover='showMenu(3);setRed(3)' onmouseout='setBlack(3)'>Menu3</a>
+        </form>
+    </div>
+    <div class="submenus">
+        <div id="submenus1" onmouseover='showMenu(1)' onmouseout='timeHide(1)'>
+            <form>
+                <a id="submenu1" onmouseover='setSubRed(1)' onmouseout='setSubBlack(1)'>subMenu1</a>
+                <br>
+                <a id="submenu2" onmouseover='setSubRed(2)' onmouseout='setSubBlack(2)'>subMenu1</a>
+                <br>
+                <a id="submenu3" onmouseover='setSubRed(3)' onmouseout='setSubBlack(3)'>subMenu1</a>
+            </form>
+        </div>
+        <div id="submenus2" onmouseover='showMenu(2)' onmouseout='timeHide(2)' onclick='changeBool()'>
+            <form>
+                <a id="submenu4" onmouseover='setSubRed(4)' onmouseout='setSubBlack(4)'>subMenu2</a>
+                <br>
+                <a id="submenu5" onmouseover='setSubRed(5)' onmouseout='setSubBlack(5)'>subMenu2</a>
+                <br>
+                <a id="submenu6" onmouseover='setSubRed(6)' onmouseout='setSubBlack(6)'>subMenu2</a>
+            </form>
+        </div>
+        <div id="submenus3" onmouseover='showMenu(3)' onmouseout='timeHide(3)'>
+            <form>
+                <a id="submenu7" onmouseover='setSubRed(7)' onmouseout='setSubBlack(7)'>subMenu3</a>
+                <br>
+                <a id="submenu8" onmouseover='setSubRed(8)' onmouseout='setSubBlack(8)'>subMenu3</a>
+                <br>
+                <a id="submenu9" onmouseover='setSubRed(9)' onmouseout='setSubBlack(9)'>subMenu3</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
