@@ -23,9 +23,11 @@
         }
         function setRed(i) {
             document.getElementById("menu" + i.toString()).style.color = "red";
+            document.getElementsByClassName("menu")[0].style.backgroundColor = "grey";
         }
         function setBlack(i) {
             document.getElementById("menu" + i.toString()).style.color = "black";
+            document.getElementsByClassName("menu")[0].style.backgroundColor = "lightgreen";
         }
         function setSubRed(i) {
             document.getElementById("submenu" + i.toString()).style.color = "red";
