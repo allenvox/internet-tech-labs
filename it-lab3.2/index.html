@@ -2,9 +2,10 @@
 <html>
 
 <head>
+    <meta charset="UTF8">
     <title>Лабораторная 3.2</title>
     <script>
-        var year = 1000 * 60 * 60 * 12 * 365;
+        // warning: works only on a web server
         function setCookie(name, value, days) {
             var expires = "";
             if (days) {
@@ -32,11 +33,10 @@
         }
         function register() {
             username = document.getElementById('name').value.toString();
-            console.log(username);
-            setCookie('user', username, 7);
-            var x = getCookie('user');
-            if (x) {
-                console.log(x);
+            if (username == "Алексей") {
+                alert("Вам запрещена регистрация!!!");
+            } else {
+                setCookie('user', username, 7);
             }
         }
         function captureVisit() {
@@ -46,14 +46,18 @@
             }
             today = new Date();
             expires = new Date();
-            expires.setTime(today.getTime() + year);
-            setCookie("visits", visits + 1, expires);
-            setCookie("last", today.toUTCString(), expires);
+            setCookie("visits", visits + 1, 7);
+            setCookie("last", today.toUTCString(), 7);
         }
         function start() {
             var visits = parseInt(getCookie("visits"));
             if (!visits) {
                 visits = 0;
+            }
+            if (visits > 3) {
+                document.getElementById("visits").style.color = "red";
+            } else {
+                document.getElementById("visits").style.color = "black";
             }
             document.getElementById("visits").textContent = visits;
             last = new Date(getCookie("last"));
@@ -73,7 +77,7 @@
             month = Math.floor(day / 30);
             day = day % 30;
             month = month % 12;
-            document.getElementById("last").textContent = month + " мес. " + day + " д. " + hour + " ч. " + min + " мин. " + sec + " с.";
+            document.getElementById("last").textContent = month + " мес. " + day + " д. " + hour + " ч. " + min + " мин. " + sec + " с. назад";
 
             var name = getCookie("user");
             if (name) {
