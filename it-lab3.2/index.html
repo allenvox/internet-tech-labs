@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+
+<head>
+    <title>Лабораторная 3.2</title>
+    <script>
+        var year = 1000 * 60 * 60 * 12 * 365;
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        function clearCookies() {
+            cookies = document.cookie.split(';');
+            for (i = 0; i < cookies.length; i++) {
+                document.cookie = cookies[i] + "=; expires=" + new Date(0).toUTCString();
+            }
+        }
+        function register() {
+            username = document.getElementById('name').value.toString();
+            console.log(username);
+            setCookie('user', username, 7);
+            var x = getCookie('user');
+            if (x) {
+                console.log(x);
+            }
+        }
+        function captureVisit() {
+            visits = parseInt(getCookie("visits"));
+            if (!visits) {
+                visits = 0;
+            }
+            today = new Date();
+            expires = new Date();
+            expires.setTime(today.getTime() + year);
+            setCookie("visits", visits + 1, expires);
+            setCookie("last", today.toUTCString(), expires);
+        }
+        function start() {
+            var visits = parseInt(getCookie("visits"));
+            if (!visits) {
+                visits = 0;
+            }
+            document.getElementById("visits").textContent = visits;
+            last = new Date(getCookie("last"));
+            now = new Date();
+            if (!last.getTime()) {
+                last = now;
+            }
+
+            delta = now.getTime() - last.getTime();
+            sec = Math.floor(delta / 1000);
+            min = Math.floor(sec / 60);
+            sec = sec % 60;
+            hour = Math.floor(min / 60);
+            min = min % 60;
+            day = Math.floor(hour / 24);
+            hour = hour % 24;
+            month = Math.floor(day / 30);
+            day = day % 30;
+            month = month % 12;
+            document.getElementById("last").textContent = month + " мес. " + day + " д. " + hour + " ч. " + min + " мин. " + sec + " с.";
+
+            var name = getCookie("user");
+            if (name) {
+                document.getElementById("greeting").textContent = ", " + name;
+            }
+            captureVisit();
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin: 10%;
+        }
+    </style>
+</head>
+
+<body onload='start()' bgcolor="white" text="black" link="blue" alink="red" vlink="purple">
+    <h1>COOKIE</h1>
+    <p>Привет<span id="greeting"></span>!</p>
+    <p>Количество посещений этой страницы: <span id="visits"></span></p>
+    <p>Вы были на этой странице <span id="last"></span></p> <br>
+    <form>
+        <span>Введите имя: </span> <input id="name" type="text" value=""> <br> <br>
+        <button id="submit" onclick='register()'>Зарегистрироваться</button>
+        <button onclick='clearCookies()'>Обнулить посещения</button>
+    </form>
+</body>
+
+</html>
