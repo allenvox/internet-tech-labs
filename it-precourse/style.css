@@ -1,0 +1,135 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Helvetica
+}
+
+a:hover {
+    cursor: pointer;
+    color: orange
+}
+
+#wrapper {
+    margin: auto;
+    margin-left: 13%;
+    width: 80%
+}
+
+#header {
+    margin-top: -1%;
+    margin-left: 10%;
+    height: 100px;
+    color: white
+}
+
+#header form {
+    margin-top: -3.6em;
+    margin-left: 45%
+}
+
+#header form a {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 9%
+}
+
+#logo {
+    margin: 16px
+}
+
+#title {
+    margin-top: -2.1em;
+    margin-left: 90px;
+    max-width: 400px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px
+}
+
+#about {
+    visibility: hidden;
+    margin-top: -40%;
+    margin-left: 6%;
+    width: 900px
+}
+
+#about p {
+    font-size: 18px
+}
+
+#seasons {
+    margin-top: 2%;
+    visibility: hidden
+}
+
+#episodes {
+    visibility: hidden
+}
+
+#seasons img {
+    margin-right: 30px
+}
+
+#seasons span {
+    margin-right: 10%
+}
+
+#seasons div {
+    margin-left: -5%
+}
+
+.season {
+    display: inline-block;
+    margin-right: 50px
+}
+
+.season:hover {
+    cursor: pointer;
+    color: orange
+}
+
+.season p {
+    margin-left: -5%;
+    font-size: 22px
+}
+
+#footer {
+    margin-top: 20.5%
+}
+
+#footer div {
+    margin-left: -5%
+}
+
+#footer img {
+    margin-right: 20px
+}
+
+#footer p {
+    margin-left: -8%;
+    color: #4f4f4f
+}
+
+#episodes {
+    margin-top: -44%;
+    margin-left: -8%;
+    font-size: 20px
+}
+
+#episodes a {
+    margin-left: 1%
+}
+
+#episodes1 {
+    margin-top: 1%;
+    visibility: hidden
+}
+
+#episodes2 {
+    margin-top: -2.3em;
+    visibility: hidden
+}
+
+#episodes3 {
+    margin-top: -2.3em;
+    visibility: hidden
+}
