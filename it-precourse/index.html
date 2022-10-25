@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<html>
+
+<head>
+    <title>South Park forever</title>
+    <meta charset="UTF8">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="white" alink="red" vlink="white">
+    <div id="wrapper">
+        <div id="header">
+            <a href="index.html"><img id="logo" src="img/kenny.png" width="50" height="68"></a>
+            <p id="title">South Park forever</p>
+            <form>
+                <a onclick="show('seasons')">Сезоны</a>
+                <a onclick="show('about')">О нас</a>
+            </form>
+        </div>
+        <br>
+        <div id="empty">
+            <p>Выбери один из разделов сайта</p>
+            <img id="arrow" src="img/arrow.png" width="152" height="51">
+        </div>
+        <div id="seasons" align="center">
+            <div onclick="show('episodes');watch(1,1);" class="season">
+                <img src="img/season1.jpg" width="274" height="363">
+                <p>1 сезон</p>
+            </div>
+            <div onclick="show('episodes');watch(2,1);" class="season">
+                <img src="img/season2.jpg" width="274" height="363">
+                <p>2 сезон</p>
+            </div>
+            <div onclick="show('episodes');watch(3,1);" class="season">
+                <img src="img/season3.jpg" width="274" height="363">
+                <p>3 сезон</p>
+            </div>
+        </div>
+        <br>
+        <div id="episodes" align="center">
+            <form>
+                <span>Выберите серию: </span>
+                <div id="episodes1">
+                    <a onclick="watch(1,1)">1</a>
+                    <a onclick="watch(1,2)">2</a>
+                    <a onclick="watch(1,3)">3</a>
+                    <a onclick="watch(1,4)">4</a>
+                    <a onclick="watch(1,5)">5</a>
+                    <a onclick="watch(1,6)">6</a>
+                    <a onclick="watch(1,7)">7</a>
+                    <a onclick="watch(1,8)">8</a>
+                    <a onclick="watch(1,9)">9</a>
+                    <a onclick="watch(1,10)">10</a>
+                    <a onclick="watch(1,11)">11</a>
+                    <a onclick="watch(1,12)">12</a>
+                    <a onclick="watch(1,13)">13</a>
+                </div>
+                <br>
+                <div id="episodes2">
+                    <a onclick="watch(2,1)">1</a>
+                    <a onclick="watch(2,2)">2</a>
+                    <a onclick="watch(2,3)">3</a>
+                    <a onclick="watch(2,4)">4</a>
+                    <a onclick="watch(2,5)">5</a>
+                    <a onclick="watch(2,6)">6</a>
+                    <a onclick="watch(2,7)">7</a>
+                    <a onclick="watch(2,8)">8</a>
+                    <a onclick="watch(2,9)">9</a>
+                    <a onclick="watch(2,10)">10</a>
+                    <a onclick="watch(2,11)">11</a>
+                    <a onclick="watch(2,12)">12</a>
+                    <a onclick="watch(2,13)">13</a>
+                    <a onclick="watch(2,14)">14</a>
+                    <a onclick="watch(2,15)">15</a>
+                    <a onclick="watch(2,16)">16</a>
+                    <a onclick="watch(2,17)">17</a>
+                    <a onclick="watch(2,18)">18</a>
+                </div>
+                <br>
+                <div id="episodes3">
+                    <a onclick="watch(3,1)">1</a>
+                    <a onclick="watch(3,2)">2</a>
+                    <a onclick="watch(3,3)">3</a>
+                    <a onclick="watch(3,4)">4</a>
+                    <a onclick="watch(3,5)">5</a>
+                    <a onclick="watch(3,6)">6</a>
+                    <a onclick="watch(3,7)">7</a>
+                    <a onclick="watch(3,8)">8</a>
+                    <a onclick="watch(3,9)">9</a>
+                    <a onclick="watch(3,10)">10</a>
+                    <a onclick="watch(3,11)">11</a>
+                    <a onclick="watch(3,12)">12</a>
+                    <a onclick="watch(3,13)">13</a>
+                    <a onclick="watch(3,14)">14</a>
+                    <a onclick="watch(3,15)">15</a>
+                    <a onclick="watch(3,16)">16</a>
+                    <a onclick="watch(3,17)">17</a>
+                </div>
+            </form>
+            <video id="video" width="640" height="480" controls>
+                <source id="video_src" src="video/s1/e1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div id="about">
+            <h1>О нас</h1>
+            <p>Сайт предназначен для показа в браузере всемирно известного мультсериала <span
+                    style="color:orange;">«Южный Парк»</span> без рекламы и регистрации
+                для одного человека (создателя сайта).</p>
+            <p>Сайт не является коммерческим, не получает никакого дохода от показа контента и не занимается его
+                распространением в соответствии с <b>Федеральным Законом Российской Федерации «Об авторском праве и
+                    смежных правах»</b>.</p>
+        </div>
+        <br>
+        <div id="footer" align="center">
+            <div>
+                <img src="img/kenny.gif" width="60" height="60">
+                <img src="img/kyle.gif" width="60" height="60">
+                <img src="img/stan.gif" width="70" height="70">
+                <img src="img/kartman.gif" width="80" height="60">
+            </div>
+            <p>© Григорьев Юрий, 2022</p>
+        </div>
+    </div>
+</body>
+
+</html>
