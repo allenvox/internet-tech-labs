@@ -1,7 +1,10 @@
 body {
     background-color: black;
     color: white;
-    font-family: Helvetica
+    font-family: Helvetica;
+    background-image: url(img/back.png);
+    background-position: center;
+    background-size: 100% 100%;
 }
 
 a:hover {
@@ -12,7 +15,7 @@ a:hover {
 #wrapper {
     margin: auto;
     margin-left: 13%;
-    width: 80%
+    width: 80%;
 }
 
 #header {
@@ -57,7 +60,7 @@ a:hover {
 }
 
 #seasons {
-    margin-top: 2%;
+    margin-top: -15%;
     visibility: hidden
 }
 
@@ -93,7 +96,7 @@ a:hover {
 }
 
 #footer {
-    margin-top: 20.5%
+    margin-top: 19%
 }
 
 #footer div {
@@ -132,4 +135,16 @@ a:hover {
 #episodes3 {
     margin-top: -2.3em;
     visibility: hidden
+}
+
+#empty {
+    font-size: 22;
+    margin-top: 15%;
+    margin-left: 23%;
+}
+
+#arrow {
+    margin-left: 37%;
+    margin-top: -14%;
+    transform: rotate(-40deg);
 }
