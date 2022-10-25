@@ -6,8 +6,10 @@ function show(val) {
     document.getElementById("episodes3").style.visibility = "hidden";
     if(showing == val) {
         showing = "empty";
+        document.body.style.backgroundImage = "url(img/back.png)";
     } else {
         showing = val;
+        document.body.style.backgroundImage = "url()";
     }
     document.getElementById(showing.toString()).style.visibility = "visible";
 }
