@@ -32,8 +32,12 @@ a:hover {
 
 #header form a {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 20;
     margin: 0 9%
+}
+
+#header form a:hover {
+    font-size: 23
 }
 
 #logo {
@@ -49,6 +53,7 @@ a:hover {
 }
 
 #about {
+    animation: 4s show linear;
     visibility: hidden;
     margin-top: -40%;
     margin-left: 6%;
@@ -59,7 +64,18 @@ a:hover {
     font-size: 18px
 }
 
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 #seasons {
+    animation: 4s show ease;
     margin-top: -15%;
     visibility: hidden
 }
